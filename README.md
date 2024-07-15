@@ -1,5 +1,3 @@
-# PM-RAT
-
 # Perioperative Multitask Risk Alert Toolkit (PM-RAT)
 
 ## Introduction
