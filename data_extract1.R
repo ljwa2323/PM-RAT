@@ -210,7 +210,6 @@ get_1opid_allAlign <- function(k) {
   # t1_icu <- operation_row$icuout_time
 
   lab_k <- labs[labs$subject_id == cur_sid, ]
-  lab_k$timecol2 <- rep(NA, nrow(lab_k))
   lab_k1 <- resample_single_long(lab_k,
                               d_lab$itemid,
                               d_lab$value_type,
@@ -219,7 +218,6 @@ get_1opid_allAlign <- function(k) {
                               "item_name",
                               "value",
                               "chart_time",
-                              "timecol2",
                               (t_in - t0),
                               direction = "both",
                               keepNArow = F)
@@ -233,7 +231,6 @@ get_1opid_allAlign <- function(k) {
   lab_pre <- lab_k1
 
   lab_k <- labs[labs$subject_id == cur_sid, ]
-  lab_k$timecol2 <- rep(NA, nrow(lab_k))
   lab_k1 <- resample_single_long(lab_k,
                               d_lab$itemid,
                               d_lab$value_type,
@@ -242,7 +239,6 @@ get_1opid_allAlign <- function(k) {
                               "item_name",
                               "value",
                               "chart_time",
-                              "timecol2",
                               (60 * 24),
                               direction = "both",
                               keepNArow = F)
@@ -260,7 +256,6 @@ get_1opid_allAlign <- function(k) {
 
   vit_k <- rbind(vitals[vitals$op_id == cur_opid, 2:5,drop=F], ward_vitals[ward_vitals$subject_id == cur_sid,,drop=F])
 
-  vit_k$timecol2 <- rep(NA, nrow(vit_k))
   vit_k1 <- resample_single_long(vit_k,
                               d_vit$itemid,
                               d_vit$value_type,
@@ -269,7 +264,6 @@ get_1opid_allAlign <- function(k) {
                               "item_name",
                               "value",
                               "chart_time",
-                              "timecol2",
                               5,
                               direction = "both",
                               keepNArow = F,
@@ -296,8 +290,6 @@ get_1opid_allAlign <- function(k) {
   mask_vit_pre <- mask_vit_pre %>% as.data.frame %>% lapply(., as.numeric) %>% as.data.frame
   # mask_vit_pre <- mask_vit_pre[,c(1,7,10:12,14,18,23,34,36:79),drop=F]
 
-
-  vit_k$timecol2 <- rep(NA, nrow(vit_k))
   vit_k1 <- resample_single_long(vit_k,
                               d_vit$itemid,
                               d_vit$value_type,
@@ -306,7 +298,6 @@ get_1opid_allAlign <- function(k) {
                               "item_name",
                               "value",
                               "chart_time",
-                              "timecol2",
                               5,
                               direction = "both",
                               keepNArow = F)
@@ -338,7 +329,6 @@ get_1opid_allAlign <- function(k) {
   mask_vit_in <- mask_vit_in %>% as.data.frame %>% lapply(., as.numeric) %>% as.data.frame
   mask_vit_in <- mask_vit_in[,c(1:72),drop=F]
 
-  vit_k$timecol2 <- rep(NA, nrow(vit_k))
   vit_k1 <- resample_single_long(vit_k,
                               d_vit$itemid,
                               d_vit$value_type,
@@ -347,7 +337,6 @@ get_1opid_allAlign <- function(k) {
                               "item_name",
                               "value",
                               "chart_time",
-                              "timecol2",
                               5,
                               direction = "both",
                               keepNArow = F,
@@ -551,55 +540,6 @@ for (i in 1:num_chunks) {
 }
 
 results <- do.call(c, results)
-
-
-# ==============  以下是草稿 ==========================
-
-# names(lab_k1)
-# names(x_s)
-# c(names(lab_k1),paste0(names(lab_k1),"_mask"),names(x_s))
-
-# c(names(vit_pre)[-1],paste0(names(vit_pre)[-1],"_mask"))
-
-# c(names(vit_in)[-c(1,ncol(vit_in))],paste0(names(vit_in)[-c(1,ncol(vit_in))],"_mask"))
-
-
-  # vit_k$timecol2 <- rep(NA, nrow(vit_k))
-  # vit_k1 <- resample_data_long(vit_k,
-  #                             d_vit$itemid,
-  #                             d_vit$value_type,
-  #                             d_vit$agg_f,
-  #                             seq(t0, t1, 5), # t_start - 60*8
-  #                             "item_name",
-  #                             "value",
-  #                             "chart_time",
-  #                             "timecol2",
-  #                             5,
-  #                             keepNArow = F,
-  #                             keep_first = F)
-  # mask_vit <- get_mask(vit_k1, 3:ncol(vit_k1), 1)
-  # ind <- which(as.numeric(vit_k1[,1,drop=T]) >= t_start & as.numeric(vit_k1[,1,drop=T]) <= t_end)
-  # X <- vit_k1[ind, c(1,3:ncol(vit_k1)), drop=F]
-  # vit_k1[,10] <- ifelse(is.na(vit_k1[,13]), vit_k1[,10], vit_k1[,13])
-  # vit_k1[,11] <- ifelse(is.na(vit_k1[,14]), vit_k1[,11], vit_k1[,14])
-  # vit_k1[,12] <- ifelse(is.na(vit_k1[,15]), vit_k1[,12], vit_k1[,15])
-  # vit_k1 <- fill(vit_k1, 3:ncol(vit_k1), 1, get_type(stat_vit), d_vit$fill, d_vit$fillall, stat_vit)
-  # # vit_k1 <- norm_num(vit_k1, 2:ncol(vit_k1), 1, get_type(stat_vit), stat_vit)
-  # # dim(vit_k1)
-  # # colnames(vit_k1)
-  # vit_k1 <- vit_k1[,-c(13:15),drop=F]
-
-  # ind <- which(as.numeric(vit_k1[,1,drop=T]) < t_start)
-  # vit_pre <- vit_k1[ind, ,drop=F]
-  # mask_vit_pre <- mask_vit[ind, ,drop=F]
-
-  # ind <- which(as.numeric(vit_k1[,1,drop=T]) >= t_start & as.numeric(vit_k1[,1,drop=T]) <= t_end)
-  # vit_in <- vit_k1[ind, ,drop=F]
-  # mask_vit_in <- mask_vit[ind, ,drop=F]
-
-  # ind <- which(as.numeric(vit_k1[,1,drop=T]) > t_end)
-  # vit_post <- vit_k1[ind, ,drop=F]
-  # mask_vit_post <- mask_vit[ind, ,drop=F])
 
 
 

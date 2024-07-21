@@ -387,21 +387,18 @@ agg_f_dict <- list("mean" = Mean, "sum" = sum, "sum_w" = sum,
                    "first" = get_first, "last" = get_last,
                    "any" = Any, "all" = All)
 
-resample_single_wide <- function(df, itemid_list, type_list, agg_f_list, time_list, time_col1, time_col2, time_window, direction="both", keepNArow=F, keep_first=T) {
+resample_single_wide <- function(df, itemid_list, type_list, agg_f_list, time_list, time_col1, time_window, direction="both", keepNArow=F, keep_first=T) {
 
     Colnames <- c("time", "keep", itemid_list)
     
     mat <- lapply(time_list, function(cur_t){
         # 根据 direction 参数调整时间过滤条件
         if (direction == "both") {
-            ind_time <- which(((is.na(df[[time_col2]]) & df[[time_col1]] >= (cur_t - time_window/2) & df[[time_col1]] <= (cur_t + time_window/2)) |
-                               (!is.na(df[[time_col2]]) & (df[[time_col1]] <= (cur_t + time_window/2) & df[[time_col2]] >= (cur_t - time_window/2)))))
+            ind_time <- which(df[[time_col1]] >= (cur_t - time_window/2) & df[[time_col1]] <= (cur_t + time_window/2))
         } else if (direction == "left") {
-            ind_time <- which(((is.na(df[[time_col2]]) & df[[time_col1]] >= (cur_t - time_window) & df[[time_col1]] <= cur_t) |
-                               (!is.na(df[[time_col2]]) & (df[[time_col1]] <= cur_t & df[[time_col2]] >= (cur_t - time_window)))))
+            ind_time <- which(df[[time_col1]] >= (cur_t - time_window) & df[[time_col1]] <= cur_t)
         } else if (direction == "right") {
-            ind_time <- which(((is.na(df[[time_col2]]) & df[[time_col1]] >= cur_t & df[[time_col1]] <= (cur_t + time_window)) |
-                               (!is.na(df[[time_col2]]) & (df[[time_col1]] <= (cur_t + time_window) & df[[time_col2]] >= cur_t))))
+            ind_time <- which(df[[time_col1]] >= cur_t & df[[time_col1]] <= (cur_t + time_window))
         }
 
         if(length(ind_time) == 0) return(c("0", rep(NA, length(itemid_list))))
@@ -450,29 +447,24 @@ resample_single_wide <- function(df, itemid_list, type_list, agg_f_list, time_li
     return(mat)
 }
 
-resample_single_long <- function(df, itemid_list, type_list, agg_f_list, time_list, itemid_col, value_col, time_col1, time_col2, time_window, direction="both", keepNArow=F, keep_first=T) {
+resample_single_long <- function(df, itemid_list, type_list, agg_f_list, time_list, itemid_col, value_col, time_col1, time_window, direction="both", keepNArow=F, keep_first=T) {
 
     Colnames <- c("time", "keep", itemid_list)
     
     mat <- lapply(time_list, function(cur_t){
-        # cur_t = time_list[3];
         # 根据 direction 参数调整时间过滤条件
         if (direction == "both") {
-            ind_time <- which(((is.na(df[[time_col2]]) & df[[time_col1]] >= (cur_t - time_window/2) & df[[time_col1]] <= (cur_t + time_window/2)) |
-                               (!is.na(df[[time_col2]]) & (df[[time_col1]] <= (cur_t + time_window/2) & df[[time_col2]] >= (cur_t - time_window/2)))))
+            ind_time <- which(df[[time_col1]] >= (cur_t - time_window/2) & df[[time_col1]] <= (cur_t + time_window/2))
         } else if (direction == "left") {
-            ind_time <- which(((is.na(df[[time_col2]]) & df[[time_col1]] >= (cur_t - time_window) & df[[time_col1]] <= cur_t) |
-                               (!is.na(df[[time_col2]]) & (df[[time_col1]] <= cur_t & df[[time_col2]] >= (cur_t - time_window)))))
+            ind_time <- which(df[[time_col1]] >= (cur_t - time_window) & df[[time_col1]] <= cur_t)
         } else if (direction == "right") {
-            ind_time <- which(((is.na(df[[time_col2]]) & df[[time_col1]] >= cur_t & df[[time_col1]] <= (cur_t + time_window)) |
-                               (!is.na(df[[time_col2]]) & (df[[time_col1]] <= (cur_t + time_window) & df[[time_col2]] >= cur_t))))
+            ind_time <- which(df[[time_col1]] >= cur_t & df[[time_col1]] <= (cur_t + time_window))
         }
 
         if(length(ind_time) == 0) return(c("0", rep(NA, length(itemid_list))))
         ds_cur <- df[ind_time, ]
 
         cur_x <- mapply(function(itemid, type, agg_f) {
-                            # i=2;itemid=itemid_list[i];type=type_list[i];agg_f=agg_f_list[i];print(type)
                             ind <- which(ds_cur[[itemid_col]] == itemid)
                             x <- ds_cur[[value_col]][ind]
                             if (type == "num") {
