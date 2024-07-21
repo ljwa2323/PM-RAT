@@ -1,0 +1,121 @@
+Original Term,Full Name,Standardized Abbreviation
+be_pre,Base Excess (Pre),BE (Pre)
+hco3_pre,Bicarbonate (Pre),HCO3 (Pre)
+paco2_pre,Partial Pressure of Carbon Dioxide (Pre),PaCO2 (Pre)
+pao2_pre,Partial Pressure of Oxygen (Pre),PaO2 (Pre)
+ph_pre,pH (Pre),pH (Pre)
+sao2_pre,Oxygen Saturation (Pre),SpO2 (Pre)
+hb_pre,Hemoglobin (Pre),Hb (Pre)
+hct_pre,Hematocrit (Pre),Hct (Pre)
+lymphocyte_pre,Lymphocyte Count (Pre),Lymph Count (Pre)
+platelet_pre,Platelet Count (Pre),Plt Count (Pre)
+wbc_pre,White Blood Cell Count (Pre),WBC (Pre)
+albumin_pre,Albumin (Pre),Alb (Pre)
+alp_pre,Alkaline Phosphatase (Pre),ALP (Pre)
+alt_pre,Alanine Transaminase (Pre),ALT (Pre)
+ast_pre,Aspartate Transaminase (Pre),AST (Pre)
+bun_pre,Blood Urea Nitrogen (Pre),BUN (Pre)
+calcium_pre,Calcium (Pre),Ca (Pre)
+chloride_pre,Chloride (Pre),Cl (Pre)
+ck_pre,Creatine Kinase (Pre),CK (Pre)
+creatinine_pre,Creatinine (Pre),CRE (Pre)
+glucose_pre,Glucose (Pre),Glu (Pre)
+lacate_pre,Lactate (Pre),Lac (Pre)
+phosphorus_pre,Phosphorus (Pre),P (Pre)
+potassium_pre,Potassium (Pre),K (Pre)
+sodium_pre,Sodium (Pre),Na (Pre)
+total_bilirubin_pre,Total Bilirubin (Pre),TBIL (Pre)
+total_protein_pre,Total Protein (Pre),TP (Pre)
+aptt_pre,Activated Partial Thromboplastin Time (Pre),APTT (Pre)
+d_dimer_pre,D-dimer (Pre),D-Dimer (Pre)
+fibrinogen_pre,Fibrinogen (Pre),FIB (Pre)
+ptinr_pre,Prothrombin Time (Pre),INR (Pre)
+ckmb_pre,Creatine Kinase-MB (Pre),CK-MB (Pre)
+crp_pre,High-sensitive C-reactive Protein (Pre),hs-CRP (Pre)
+hba1c_pre,Hemoglobin A1c (Pre),HbA1c (Pre)
+troponin_i_pre,Troponin-I (Pre),TnI (Pre)
+troponin_t_pre,Troponin-T (Pre),TnT (Pre)
+mask_be_pre,Mask for Base Excess (Pre),mask_BE (Pre)
+mask_hco3_pre,Mask for Bicarbonate (Pre),mask_HCO3 (Pre)
+mask_paco2_pre,Mask for Partial Pressure of Carbon Dioxide (Pre),mask_PaCO2 (Pre)
+mask_pao2_pre,Mask for Partial Pressure of Oxygen (Pre),mask_PaO2 (Pre)
+mask_ph_pre,Mask for pH (Pre),mask_pH (Pre)
+mask_sao2_pre,Mask for Oxygen Saturation (Pre),mask_SpO2 (Pre)
+mask_hb_pre,Mask for Hemoglobin (Pre),mask_Hb (Pre)
+mask_hct_pre,Mask for Hematocrit (Pre),mask_Hct (Pre)
+mask_lymphocyte_pre,Mask for Lymphocyte Count (Pre),mask_Lymph Count (Pre)
+mask_platelet_pre,Mask for Platelet Count (Pre),mask_Plt Count (Pre)
+mask_wbc_pre,Mask for White Blood Cell Count (Pre),mask_WBC (Pre)
+mask_albumin_pre,Mask for Albumin (Pre),mask_Alb (Pre)
+mask_alp_pre,Mask for Alkaline Phosphatase (Pre),mask_ALP (Pre)
+mask_alt_pre,Mask for Alanine Transaminase (Pre),mask_ALT (Pre)
+mask_ast_pre,Mask for Aspartate Transaminase (Pre),mask_AST (Pre)
+mask_bun_pre,Mask for Blood Urea Nitrogen (Pre),mask_BUN (Pre)
+mask_calcium_pre,Mask for Calcium (Pre),mask_Ca (Pre)
+mask_chloride_pre,Mask for Chloride (Pre),mask_Cl (Pre)
+mask_ck_pre,Mask for Creatine Kinase (Pre),mask_CK (Pre)
+mask_creatinine_pre,Mask for Creatinine (Pre),mask_CRE (Pre)
+mask_glucose_pre,Mask for Glucose (Pre),mask_Glu (Pre)
+mask_lacate_pre,Mask for Lactate (Pre),mask_Lac (Pre)
+mask_phosphorus_pre,Mask for Phosphorus (Pre),mask_P (Pre)
+mask_potassium_pre,Mask for Potassium (Pre),mask_K (Pre)
+mask_sodium_pre,Mask for Sodium (Pre),mask_Na (Pre)
+mask_total_bilirubin_pre,Mask for Total Bilirubin (Pre),mask_TBIL (Pre)
+mask_total_protein_pre,Mask for Total Protein (Pre),mask_TP (Pre)
+mask_aptt_pre,Mask for Activated Partial Thromboplastin Time (Pre),mask_APTT (Pre)
+mask_d_dimer_pre,Mask for D-dimer (Pre),mask_D-Dimer (Pre)
+mask_fibrinogen_pre,Mask for Fibrinogen (Pre),mask_FIB (Pre)
+mask_ptinr_pre,Mask for Prothrombin Time (Pre),mask_INR (Pre)
+mask_ckmb_pre,Mask for Creatine Kinase-MB (Pre),mask_CK-MB (Pre)
+mask_crp_pre,Mask for High-sensitive C-reactive Protein (Pre),mask_hs-CRP (Pre)
+mask_hba1c_pre,Mask for Hemoglobin A1c (Pre),mask_HbA1c (Pre)
+mask_troponin_i_pre,Mask for Troponin-I (Pre),mask_TnI (Pre)
+mask_troponin_t_pre,Mask for Troponin-T (Pre),mask_TnT (Pre)
+age,Age,Age
+sex,Sex,Sex
+weight,Weight,Weight
+height,Height,Height
+asa___1,American Society of Anesthesiologists Classification 1,ASA_1
+asa___2,American Society of Anesthesiologists Classification 2,ASA_2
+asa___3,American Society of Anesthesiologists Classification 3,ASA_3
+asa___4,American Society of Anesthesiologists Classification 4,ASA_4
+asa___5,American Society of Anesthesiologists Classification 5,ASA_5
+asa___6,American Society of Anesthesiologists Classification 6,ASA_6
+emop,Emergency Operation,Emergency Operation
+bmi,Body Mass Index,BMI
+Surgery_Bones_and_Joints,Surgery of Bones and Joints,Surgery_Bones_Joints
+Surgery_Central_Nervous_System_and_Cranial_Nerves,Surgery of Central Nervous System and Cranial Nerves,Surgery_CNS
+Surgery_Endocrine_System,Surgery of Endocrine System,Surgery_Endocrine_System
+Surgery_Gastrointestinal_System,Surgery of Gastrointestinal System,Surgery_Gastrointestinal
+Surgery_Head_and_Neck,Surgery of Head and Neck,Surgery_Head_Neck
+Surgery_Heart_and_Great_Vessels,Surgery of Heart and Great Vessels,Surgery_Heart_Vessels
+Surgery_Hepatobiliary_System_and_Pancreas,Surgery of Hepatobiliary System and Pancreas,Surgery_Hepatobiliary
+Surgery_Lymphatic_and_Hemic_Systems,Surgery of Lymphatic and Hemic Systems,Surgery_Lymphatic_Hemic
+Surgery_Other,Other Surgery,Surgery_Other
+Surgery_Peripheral_Vascular_System,Surgery of Peripheral Vascular System,Surgery_Peripheral_Vascular
+Surgery_Respiratory_System,Surgery of Respiratory System,Surgery_Respiratory
+Surgery_Skin_and_Soft_Tissue,Surgery of Skin and Soft Tissue,Surgery_Skin_Soft_Tissue
+Surgery_Urinary_and_Reproductive_Systems,Surgery of Urinary and Reproductive Systems,Surgery_Urinary_Reproductive
+Essential_Hypertension,Essential Hypertension,Hypertension
+Coronary_Heart_Disease,Coronary Heart Disease,Coronary heart disease
+Congestive_Heart_Failure,Congestive Heart Failure,Congestive heart failure
+Atrial_Fibrillation_and_Flutter,Atrial Fibrillation and Flutter,Atrial fibrillation and flutter
+Abnormalities_of_Heart_Beat,Abnormalities of Heart Beat,Arrhythmia
+Diabetes_Mellitus,Diabetes Mellitus,Diabetes
+Cerebral_Infarction,Cerebral Infarction,Cerebral infarction
+Transient_Cerebral_Ischemic_Attacks,Transient Cerebral Ischemic Attacks,Transient cerebral ischemic attacks
+Emphysema_or_COPD,Emphysema or Chronic Obstructive Pulmonary Disease,Emphysema or COPD
+Asthma,Asthma,Asthma
+Acute_Upper_Respiratory_Infections,Acute Upper Respiratory Infections,Acute upper respiratory infections
+Acute_Lower_Respiratory_Infections,Acute Lower Respiratory Infections,Acute lower respiratory infection
+Abnormalities_of_Breathing,Abnormalities of Breathing,Abnormalities of breathing
+Malignant_Neoplasms,Malignant Neoplasms,Malignant neoplasms
+In_Situ_Neoplasms,In Situ Neoplasms,In situ neoplasms
+Benign_Neoplasms,Benign Neoplasms,Benign neoplasms
+Neoplasms_of_Uncertain_Behavior,Neoplasms of Uncertain Behavior,Uncertain behavior neoplasms
+Chronic_Kidney_Disease,Chronic Kidney Disease,Chronic kidney disease
+Chronic_Viral_Hepatitis,Chronic Viral Hepatitis,Chronic viral hepatitis
+Liver_Disease,Liver Disease,Liver disease
+Gastro_Esophageal_Reflux_Disease,Gastroesophageal Reflux Disease,Gastro-esophageal reflux disease
+Anemia,Anemia,Anemia
+Disorder_of_Thyroid,Disorder of Thyroid,Thyroid_Disorder
